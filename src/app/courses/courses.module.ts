@@ -6,6 +6,7 @@ import { CoursesPageComponent } from './pages/courses-page/courses-page.componen
 import { NewCoursPageComponent } from './pages/new-course-page/new-course-page.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { ModalWindowComponent } from './components/modal-window/modal-window.component';
+import { SearchCourseComponent } from './components/search-course/search-course.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ModalWindowComponent } from './components/modal-window/modal-window.com
     NewCoursPageComponent,
     CourseCardComponent,
     ModalWindowComponent,
+    SearchCourseComponent,
   ],
   imports: [
     CommonModule,
