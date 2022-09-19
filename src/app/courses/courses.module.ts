@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
-import { NewCoursPageComponent } from './pages/new-cours-page/new-cours-page.component';
+import { NewCoursPageComponent } from './pages/new-course-page/new-course-page.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
-import { DeleteCoursModalComponent } from './components/delete-cours-modal/delete-cours-modal.component';
+import { ModalWindowComponent } from './components/modal-window/modal-window.component';
 
 
 @NgModule({
@@ -13,11 +13,11 @@ import { DeleteCoursModalComponent } from './components/delete-cours-modal/delet
     CoursesPageComponent,
     NewCoursPageComponent,
     CourseCardComponent,
-    DeleteCoursModalComponent
+    ModalWindowComponent,
   ],
   imports: [
     CommonModule,
-    CoursesRoutingModule
-  ]
+    CoursesRoutingModule,
+  ],
 })
 export class CoursesModule { }

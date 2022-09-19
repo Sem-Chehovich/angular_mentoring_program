@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewCoursPageComponent } from './new-cours-page.component';
+import { NewCoursPageComponent } from './new-course-page.component';
 
 describe('NewCoursPageComponent', () => {
   let component: NewCoursPageComponent;
@@ -8,9 +8,9 @@ describe('NewCoursPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewCoursPageComponent ]
+      declarations: [ NewCoursPageComponent ],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(NewCoursPageComponent);
     component = fixture.componentInstance;
