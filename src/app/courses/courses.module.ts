@@ -7,6 +7,9 @@ import { NewCoursPageComponent } from './pages/new-course-page/new-course-page.c
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { ModalWindowComponent } from './components/modal-window/modal-window.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -20,6 +23,8 @@ import { SearchCourseComponent } from './components/search-course/search-course.
   imports: [
     CommonModule,
     CoursesRoutingModule,
+    MatIconModule,
+    FormsModule,
   ],
 })
 export class CoursesModule { }

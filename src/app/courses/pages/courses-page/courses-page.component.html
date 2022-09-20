@@ -1,1 +1,13 @@
-<p>courses-page works!</p>
+<div class="courses-container">
+  <app-search-course></app-search-course>
+  <div class="add-course">
+    <button class="btn">Add Course</button>
+  </div>
+  <ng-container *ngFor="let course of courses">
+    <app-course-card [course]="course" (editCourse)="onEditCourse($event)" (deleteCourse)="onDeleteCourse($event)">
+    </app-course-card>
+  </ng-container>
+  <div (click)="loadMore()" class="courses-load-more">
+    <a routerLink="/">LOAD MORE</a>
+  </div>
+</div>

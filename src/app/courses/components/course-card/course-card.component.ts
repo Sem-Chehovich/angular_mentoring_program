@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Course } from '../../models/courses.model';
 
 @Component({
   selector: 'app-course-card',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() course?: Course;
 
-  ngOnInit(): void {
+  @Output() editCourse = new EventEmitter<number>();
+
+  @Output() deleteCourse = new EventEmitter<number>();
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  onCourseEdit() {
+    this.editCourse.emit(this.course?.id);
   }
 
+  onCourseDelete() {
+    this.deleteCourse.emit(this.course?.id);
+  }
 }

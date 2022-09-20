@@ -12,6 +12,11 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     FooterComponent,
     BreadcrumbsComponent,
   ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    BreadcrumbsComponent,
+  ],
   imports: [
     CommonModule,
   ],
