@@ -8,7 +8,7 @@ import { Course } from '../../models/courses.model';
 })
 export class CourseCardComponent implements OnInit {
 
-  @Input() course?: Course;
+  @Input() course: Course;
 
   @Output() editCourse = new EventEmitter<number>();
 
@@ -19,10 +19,10 @@ export class CourseCardComponent implements OnInit {
   ngOnInit() {}
 
   onCourseEdit() {
-    this.editCourse.emit(this.course?.id);
+    this.editCourse.emit(this.course.id);
   }
 
   onCourseDelete() {
-    this.deleteCourse.emit(this.course?.id);
+    this.deleteCourse.emit(this.course.id);
   }
 }

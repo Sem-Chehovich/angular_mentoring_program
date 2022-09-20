@@ -9,6 +9,9 @@ import { ModalWindowComponent } from './components/modal-window/modal-window.com
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { DurationPipe } from '../shared/pipes/duration.pipe';
+
+
 
 
 
@@ -19,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     CourseCardComponent,
     ModalWindowComponent,
     SearchCourseComponent,
+    DurationPipe,
   ],
   imports: [
     CommonModule,

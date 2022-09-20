@@ -7,7 +7,7 @@ import { Course } from '../../models/courses.model';
   styleUrls: ['./courses-page.component.scss'],
 })
 export class CoursesPageComponent implements OnInit {
-  courses?: Course[];
+  courses: Course[];
 
   constructor() { }
 
