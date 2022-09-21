@@ -7,12 +7,10 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-// import { DurationPipe } from './shared/pipes/duration.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // DurationPipe,
 
   ],
   imports: [

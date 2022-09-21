@@ -9,11 +9,8 @@ import { ModalWindowComponent } from './components/modal-window/modal-window.com
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { DurationPipe } from '../shared/pipes/duration.pipe';
-
-
-
-
+import { SharedModule } from '../shared/shared.module';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +19,14 @@ import { DurationPipe } from '../shared/pipes/duration.pipe';
     CourseCardComponent,
     ModalWindowComponent,
     SearchCourseComponent,
-    DurationPipe,
+    CoursesListComponent,
   ],
   imports: [
     CommonModule,
     CoursesRoutingModule,
     MatIconModule,
     FormsModule,
+    SharedModule,
   ],
 })
 export class CoursesModule { }

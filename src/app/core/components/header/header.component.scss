@@ -22,7 +22,10 @@
   .header-actions {
     padding-right: 85px;
 
-    a {
+    button {
+      background-color: #414452;
+      border: none;
+      outline: none;
       font-size: 14px;
       color: #fff;
       cursor: pointer;
