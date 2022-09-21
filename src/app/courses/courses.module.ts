@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
     MatIconModule,
     FormsModule,
     SharedModule,
+    MatCardModule,
   ],
 })
 export class CoursesModule { }
