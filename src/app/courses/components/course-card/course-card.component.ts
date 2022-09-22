@@ -7,13 +7,11 @@ import { Course } from '../../models/courses.model';
   styleUrls: ['./course-card.component.scss'],
 })
 export class CourseCardComponent implements OnInit {
-
   @Input() course: Course;
 
   @Output() editCourse = new EventEmitter<number>();
 
   @Output() deleteCourse = new EventEmitter<number>();
-
   constructor() {}
 
   ngOnInit() {}
