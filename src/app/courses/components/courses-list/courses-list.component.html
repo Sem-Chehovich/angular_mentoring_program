@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let course of courses; trackBy: trackByFn">
+    <app-course-card
+      [course]="course"
+      (editCourse)="onEditCourse($event)"
+      (deleteCourse)="onDeleteCourse($event)"
+    >
+    </app-course-card>
+  </li>
+</ul>

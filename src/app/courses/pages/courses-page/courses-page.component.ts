@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from '../../models/courses.model';
 
 @Component({
   selector: 'app-courses-page',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses-page.component.scss'],
 })
 export class CoursesPageComponent implements OnInit {
+  courses: Course[];
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  loadMore() {
+    console.log('Button clicked view more');
+  }
 }

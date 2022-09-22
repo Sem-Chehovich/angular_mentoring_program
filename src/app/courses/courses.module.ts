@@ -7,7 +7,11 @@ import { NewCoursPageComponent } from './pages/new-course-page/new-course-page.c
 import { CourseCardComponent } from './components/course-card/course-card.component';
 import { ModalWindowComponent } from './components/modal-window/modal-window.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
-
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -16,10 +20,15 @@ import { SearchCourseComponent } from './components/search-course/search-course.
     CourseCardComponent,
     ModalWindowComponent,
     SearchCourseComponent,
+    CoursesListComponent,
   ],
   imports: [
     CommonModule,
     CoursesRoutingModule,
+    MatIconModule,
+    FormsModule,
+    SharedModule,
+    MatCardModule,
   ],
 })
 export class CoursesModule { }
