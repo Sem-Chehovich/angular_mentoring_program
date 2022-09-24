@@ -11,7 +11,7 @@ describe('CourseCardComponent', () => {
   let fixture: ComponentFixture<CourseCardComponent>;
   const course: Course = {
     id: 42,
-    creationDate: new Date,
+    creationDate: new Date(2022,8,23),
     title: 'title Course name',
     duration: 123,
     description: 'description Course',
@@ -55,13 +55,6 @@ describe('CourseCardComponent', () => {
     component.deleteCourse.subscribe( id  => expect(id).toBe(course.id));
     component.onCourseDelete();
   });
-
-
-
-
-
-
-  
 
   it('should display the name of the course', () => {
     component.course = course;
