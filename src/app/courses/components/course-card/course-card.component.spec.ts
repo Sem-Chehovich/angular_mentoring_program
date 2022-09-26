@@ -32,14 +32,14 @@ describe('CourseCardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('when clicking on the edit button, the ID should be transmitted', () => {
+  it('should emit course id when the edit button is clicked', () => {
     component.course = courseTest;
     spyOn(component.editCourse, 'emit');
     component.onCourseEdit();
     expect(component.editCourse.emit).toHaveBeenCalledWith(courseTest.id);
   });
 
-  it('when clicking on the delete button, the ID should be transmitted', () => {
+  it('should emit course id when the delete button is clicked', () => {
     component.course = courseTest;
     spyOn(component.deleteCourse, 'emit');
     component.onCourseDelete();
