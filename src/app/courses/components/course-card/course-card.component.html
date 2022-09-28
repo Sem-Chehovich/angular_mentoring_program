@@ -1,6 +1,9 @@
-<mat-card>
+<mat-card [ngClass]="getBorderColor()">
   <div class="title-container">
-    <mat-card-title>{{ course?.title }}</mat-card-title>
+    <div class="icon-container">
+      <mat-card-title>{{ course?.title | uppercase  }}</mat-card-title>
+      <img src="assets/ic-star.svg" alt="img" class="star-icon" *ngIf="course?.topRated" />
+    </div>
     <div class="course-duration-wrapper">
       <mat-icon>schedule</mat-icon>
       <span>{{ course?.duration | duration }}</span>

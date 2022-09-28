@@ -84,3 +84,19 @@
     overflow: unset;
   }
 }
+
+.green {
+  border: 5px solid green;
+}
+
+.blue {
+  border: 5px solid blue;
+}
+
+.icon-container {
+  display: flex;
+  align-items: flex-start;
+}
+.star-icon {
+  margin-left: 10px;
+}

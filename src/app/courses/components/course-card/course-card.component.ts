@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Course } from '../../models/courses.model';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-course-card',
@@ -22,5 +23,15 @@ export class CourseCardComponent implements OnInit {
 
   onCourseDelete() {
     this.deleteCourse.emit(this.course?.id);
+  }
+  public getBorderColor(): string {
+    const datePublication: moment.Moment = moment(this.course?.creationDate);
+    const currentDate: moment.Moment = moment();
+    const days: number = currentDate.diff(datePublication, 'days');
+    const month: number = currentDate.diff(datePublication, 'months');
+    if (days <= 14) {
+      return 'green';
+    }
+    return 'blue';
   }
 }
