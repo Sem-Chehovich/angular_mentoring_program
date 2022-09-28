@@ -24,6 +24,7 @@ export class CourseCardComponent implements OnInit {
   onCourseDelete() {
     this.deleteCourse.emit(this.course?.id);
   }
+  
   public getBorderColor(): string {
     const datePublication: moment.Moment = moment(this.course?.creationDate);
     const currentDate: moment.Moment = moment();

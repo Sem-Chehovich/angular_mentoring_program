@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import {MatCardModule} from '@angular/material/card';
-import { FilterPipe } from '../shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [

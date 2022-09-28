@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { Component, Input, OnChanges, OnInit, } from '@angular/core';
+import { Component, Input, OnInit, } from '@angular/core';
 import { Course } from '../../models/courses.model';
 
 
@@ -8,7 +7,7 @@ import { Course } from '../../models/courses.model';
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.scss'],
 })
-export class CoursesListComponent implements OnInit, OnChanges{
+export class CoursesListComponent implements OnInit{
   @Input() query: string;
 
   courses: Course[];
@@ -48,9 +47,6 @@ export class CoursesListComponent implements OnInit, OnChanges{
         topRated: true
       },
     ];
-  }
-  ngOnChanges() {
-    this.isDataEmpty = this.courses?.length === 0;
   }
 
 

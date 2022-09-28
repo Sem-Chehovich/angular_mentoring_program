@@ -6,7 +6,7 @@ import { Course } from 'src/app/courses/models/courses.model';
 })
 export class FilterPipe implements PipeTransform {
   transform(arr: Course[], message: string): Course[] {
-    const transformedCondition = message.toLowerCase();
+    const transformedCondition = message?.toLowerCase();
     return arr.filter(course => course.title.toLowerCase().includes(transformedCondition));
   }
 

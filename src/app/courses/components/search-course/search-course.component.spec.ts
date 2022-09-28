@@ -30,18 +30,17 @@ describe('SearchCourseComponent', () => {
   it('should output to console on search click', () => {
     component.searchText = 'test test';
     fixture.detectChanges();
+    spyOn(component.searchTerm, 'emit');
     component.search();
-    expect(console.log).toHaveBeenCalledWith('You searched for this word: test test');
+    expect(component.searchTerm.emit).toHaveBeenCalledWith("test test");
   });
 
   it('should output to console on search button click', () => {
     component.searchText = 'test test';
-    fixture.detectChanges();
-    const el: HTMLElement = fixture.nativeElement;
-    const button = el.querySelector('button');
-    button?.click();
-    expect(console.log).toHaveBeenCalledWith('You searched for this word: test test');
-  });
+    spyOn(component.searchTerm, 'emit');
+    component.search();
+    expect(component.searchTerm.emit).toHaveBeenCalledWith("test test");
+});
 
   it('search method should be called', () => {
     spyOn(component, 'search');

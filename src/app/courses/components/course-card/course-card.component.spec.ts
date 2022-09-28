@@ -1,6 +1,7 @@
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { OrderByPipe } from 'src/app/shared/pipes/order-by.pipe';
 import { DurationPipe } from '../../../shared/pipes/duration.pipe';
 import { Course } from '../../models/courses.model';
 
@@ -15,11 +16,20 @@ describe('CourseCardComponent', () => {
     title: 'title Course name',
     duration: 123,
     description: 'description Course',
+    topRated: false
+  };
+  const courseTestOldTime: Course = {
+    id: 42,
+    creationDate: new Date(2022,7,23),
+    title: 'title Course name',
+    duration: 123,
+    description: 'description Course',
+    topRated: false
   };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CourseCardComponent, DurationPipe ],
+      declarations: [ CourseCardComponent, DurationPipe, OrderByPipe ],
     })
       .compileComponents();
 
@@ -51,7 +61,7 @@ describe('CourseCardComponent', () => {
     fixture.detectChanges();
     const courseElement: HTMLElement = fixture.nativeElement;
     const title = courseElement.querySelector('mat-card-title');
-    expect(title?.textContent).toEqual('title Course name');
+    expect(title?.textContent).toEqual('TITLE COURSE NAME');
   });
 
   it('should display the name of the course description', () => {
@@ -70,6 +80,18 @@ describe('CourseCardComponent', () => {
     const timeDe: DebugElement = courseDe.query(By.css('.date'));
     const time: HTMLElement = timeDe.nativeElement;
     expect(time?.textContent).toEqual('9/23/2022');
+  });
+
+  it('should getBorderColor metod with fresh date work correct', () => {
+    component.course = courseTest;
+    let res =  component.getBorderColor()
+    expect(res).toEqual('green')
+  });
+
+  it('should getBorderColor metod with old date work correct', () => {
+    component.course = courseTestOldTime;
+    let res =  component.getBorderColor()
+    expect(res).toEqual('blue')
   });
 });
 
