@@ -78,8 +78,13 @@
       }
     }
   }
+  .star-icon {
+    margin-left: 10px;
+    font-size: 25px;
+    color: yellow;
+  }
 
-  .mat-icon {
+  .icon {
     font-size: 16px;
     overflow: unset;
   }
@@ -97,6 +102,4 @@
   display: flex;
   align-items: flex-start;
 }
-.star-icon {
-  margin-left: 10px;
-}
+

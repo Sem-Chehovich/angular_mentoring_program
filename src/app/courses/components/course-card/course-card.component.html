@@ -1,13 +1,13 @@
-<mat-card [ngClass]="getBorderColor()">
+<mat-card [appBorderChange]="course?.creationDate">
   <div class="title-container">
     <div class="icon-container">
       <mat-card-title>{{ course?.title | uppercase  }}</mat-card-title>
-      <img src="assets/ic-star.svg" alt="img" class="star-icon" *ngIf="course?.topRated" />
+      <mat-icon class="star-icon">star</mat-icon>
     </div>
     <div class="course-duration-wrapper">
-      <mat-icon>schedule</mat-icon>
+      <mat-icon class="icon">schedule</mat-icon>
       <span>{{ course?.duration | duration }}</span>
-      <mat-icon>calendar_today</mat-icon>
+      <mat-icon class="icon">calendar_today</mat-icon>
       <span class="date">{{ course?.creationDate | date: "M/d/yyyy" }}</span>
     </div>
   </div>
@@ -15,10 +15,10 @@
     <mat-card-content>{{ course?.description }}</mat-card-content>
     <mat-card-actions>
       <button class="btn btn-edit" (click)="onCourseEdit()">
-        <mat-icon>create</mat-icon> Edit
+        <mat-icon class="icon">create</mat-icon> Edit
       </button>
       <button class="btn btn-delete" (click)="onCourseDelete()">
-        <mat-icon>delete</mat-icon> Delete
+        <mat-icon class="icon">delete</mat-icon> Delete
       </button>
     </mat-card-actions>
   </div>

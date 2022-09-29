@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, } from '@angular/core';
+import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { Course } from '../../models/courses.model';
 
 
@@ -7,15 +8,22 @@ import { Course } from '../../models/courses.model';
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.scss'],
 })
-export class CoursesListComponent implements OnInit{
+export class CoursesListComponent implements OnInit, OnChanges {
   @Input() query: string;
 
   courses: Course[];
   filteredCourses: Course[];
   isDataEmpty: boolean
 
-  constructor() {}
+  constructor(private filterPipe: FilterPipe) {}
 
+  ngOnChanges(changes: SimpleChanges) {
+    const { currentValue, previousValue, firstChange } = changes['query'];
+
+    if (!firstChange && currentValue !== previousValue) {
+      this.onSearchCourse(this.query);
+    }
+  }
 
   ngOnInit(): void {
     this.courses = [
@@ -25,7 +33,7 @@ export class CoursesListComponent implements OnInit{
         description:
           'Learn about where you can find course descriptions, what information they include, how they work, and details about various components of a course description. Course descriptions report information about a university or colleges classes. Theyre published both in course catalogs that outline degree requirements and in course schedules that contain descriptions for all courses offered during a particular semester.',
         duration: 88,
-        creationDate: new Date(),
+        creationDate: new Date(2022, 11, 24),
         topRated: true
       },
       {
@@ -47,6 +55,7 @@ export class CoursesListComponent implements OnInit{
         topRated: true
       },
     ];
+    this.filteredCourses = this.courses
   }
 
 
@@ -61,5 +70,9 @@ export class CoursesListComponent implements OnInit{
 
   onDeleteCourse(courseId: number) {
     console.log(`Delete Course with Id: ${courseId}`);
+  }
+
+  onSearchCourse(query: string): void {
+    this.filteredCourses = this.filterPipe.transform(this.courses, query);
   }
 }

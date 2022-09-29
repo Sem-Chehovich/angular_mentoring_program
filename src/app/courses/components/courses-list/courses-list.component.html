@@ -1,5 +1,5 @@
-<ul >
-  <li *ngFor="let course of (courses | orderBy | filter: query); trackBy: trackByFn">
+<ul>
+  <li *ngFor="let course of (filteredCourses | orderBy); trackBy: trackByFn">
     <app-course-card
       [course]="course"
       (editCourse)="onEditCourse($event)"
@@ -8,4 +8,4 @@
     </app-course-card>
   </li>
 </ul>
-  <h3 *ngIf="!(courses | filter: query).length" class="no-courses">No data. Feel free to add new course.</h3>
+  <h3 *ngIf="!filteredCourses.length" class="no-courses">No data. Feel free to add new course.</h3>

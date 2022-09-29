@@ -5,13 +5,14 @@ import { OrderByPipe } from 'src/app/shared/pipes/order-by.pipe';
 import { CoursesListComponent } from './courses-list.component';
 
 describe('CoursesListComponent', () => {
-  let component: CoursesListComponent = new CoursesListComponent();
+  let component: CoursesListComponent;
   let fixture: ComponentFixture<CoursesListComponent>;
   console.log = jasmine.createSpy('log');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoursesListComponent, FilterPipe, OrderByPipe ]
+      declarations: [ CoursesListComponent, OrderByPipe],
+      providers: [ FilterPipe ]
     })
     .compileComponents();
 

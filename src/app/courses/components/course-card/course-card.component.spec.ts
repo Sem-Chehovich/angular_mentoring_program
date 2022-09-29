@@ -81,17 +81,5 @@ describe('CourseCardComponent', () => {
     const time: HTMLElement = timeDe.nativeElement;
     expect(time?.textContent).toEqual('9/23/2022');
   });
-
-  it('should getBorderColor metod with fresh date work correct', () => {
-    component.course = courseTest;
-    let res =  component.getBorderColor()
-    expect(res).toEqual('green')
-  });
-
-  it('should getBorderColor metod with old date work correct', () => {
-    component.course = courseTestOldTime;
-    let res =  component.getBorderColor()
-    expect(res).toEqual('blue')
-  });
 });
 
