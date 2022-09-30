@@ -8,7 +8,7 @@ import { Course } from '../../models/courses.model';
 })
 export class CoursesPageComponent implements OnInit {
   courses: Course[];
-  query = '';
+  query: string = '';
 
   constructor() { }
 
