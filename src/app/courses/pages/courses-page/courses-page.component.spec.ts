@@ -26,4 +26,9 @@ describe('CoursesPageComponent', () => {
     component.loadMore();
     expect(console.log).toHaveBeenCalledWith('Button clicked view more');
   });
+
+  it('should onSearchCourse metod work correct', () => {
+    component.onSearchCourse('test');
+    expect(component.query).toEqual('test');
+  });
 });

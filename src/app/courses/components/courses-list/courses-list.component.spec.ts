@@ -1,15 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
+import { OrderByPipe } from 'src/app/shared/pipes/order-by.pipe';
 
 import { CoursesListComponent } from './courses-list.component';
 
 describe('CoursesListComponent', () => {
-  let component: CoursesListComponent = new CoursesListComponent();
+  let component: CoursesListComponent;
   let fixture: ComponentFixture<CoursesListComponent>;
   console.log = jasmine.createSpy('log');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoursesListComponent ]
+      declarations: [ CoursesListComponent, OrderByPipe],
+      providers: [ FilterPipe ]
     })
     .compileComponents();
 

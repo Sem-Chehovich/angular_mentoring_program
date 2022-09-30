@@ -8,6 +8,7 @@ import { Course } from '../../models/courses.model';
 })
 export class CoursesPageComponent implements OnInit {
   courses: Course[];
+  query: string = '';
 
   constructor() { }
 
@@ -16,5 +17,9 @@ export class CoursesPageComponent implements OnInit {
 
   loadMore() {
     console.log('Button clicked view more');
+  }
+
+  onSearchCourse(query: string) {
+    this.query = query;
   }
 }

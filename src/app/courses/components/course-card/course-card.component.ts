@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Course } from '../../models/courses.model';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-course-card',
@@ -23,4 +24,5 @@ export class CourseCardComponent implements OnInit {
   onCourseDelete() {
     this.deleteCourse.emit(this.course?.id);
   }
+
 }
