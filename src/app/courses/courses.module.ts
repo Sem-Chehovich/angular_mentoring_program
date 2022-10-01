@@ -13,6 +13,8 @@ import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import {MatCardModule} from '@angular/material/card';
 import { FilterPipe } from '../shared/pipes/filter.pipe';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { FilterPipe } from '../shared/pipes/filter.pipe';
     ModalWindowComponent,
     SearchCourseComponent,
     CoursesListComponent,
+    BreadcrumbsComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +33,7 @@ import { FilterPipe } from '../shared/pipes/filter.pipe';
     FormsModule,
     SharedModule,
     MatCardModule,
+    MatDialogModule
   ],
   providers: [
     FilterPipe

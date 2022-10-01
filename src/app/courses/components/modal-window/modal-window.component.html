@@ -1,1 +1,18 @@
-<p>modal-window works!</p>
+<h2 mat-dialog-title>Delete course? <mat-icon mat-dialog-close>close</mat-icon></h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Are you sure you want to delete</h3>
+  <h3>Video Course {{course?.id}}?</h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn btn-cancel" mat-dialog-close (click)="cancel.emit()">
+    Cancel
+  </button>
+  <button
+    class="btn btn-delit"
+    [mat-dialog-close]="true"
+    (click)="delete()"
+  >
+    Yes, delete
+  </button>
+</mat-dialog-actions>
+

@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Course } from '../../models/courses.model';
-import * as moment from 'moment';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalWindowComponent } from '../modal-window/modal-window.component';
+import { CoursesService } from '../../services/courses.service';
+
 
 @Component({
   selector: 'app-course-card',
@@ -13,7 +16,8 @@ export class CourseCardComponent implements OnInit {
   @Output() editCourse = new EventEmitter<number>();
 
   @Output() deleteCourse = new EventEmitter<number>();
-  constructor() {}
+
+  constructor(public dialog: MatDialog, private coursesService: CoursesService) {}
 
   ngOnInit() {}
 
@@ -22,7 +26,17 @@ export class CourseCardComponent implements OnInit {
   }
 
   onCourseDelete() {
-    this.deleteCourse.emit(this.course?.id);
+    const dialogRef = this.dialog.open(ModalWindowComponent);
+    this.coursesService.course = this.course
+    // this.deleteCourse.emit(this.course?.id);
   }
+
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 
 }
