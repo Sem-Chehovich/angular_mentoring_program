@@ -12,7 +12,6 @@ import { CoursesService } from '../../services/courses.service';
 export class CoursesListComponent implements OnInit, OnChanges {
   @Input() query: string;
 
-  // courses: Course[];
   searchedCourses: Course[];
   isDataEmpty: boolean
 

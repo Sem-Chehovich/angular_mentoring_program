@@ -5,16 +5,15 @@ import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
 import { NewCoursPageComponent } from './pages/new-course-page/new-course-page.component';
 import { CourseCardComponent } from './components/course-card/course-card.component';
-import { ModalWindowComponent } from './components/modal-window/modal-window.component';
+import { ModalWindowComponent } from '../core/components/modal-window/modal-window.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { FilterPipe } from '../shared/pipes/filter.pipe';
 import { MatDialogModule } from '@angular/material/dialog';
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     ModalWindowComponent,
     SearchCourseComponent,
     CoursesListComponent,
-    BreadcrumbsComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +34,7 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     MatDialogModule
   ],
   providers: [
-    FilterPipe
+    FilterPipe,
   ],
 })
 export class CoursesModule { }

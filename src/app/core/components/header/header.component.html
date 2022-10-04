@@ -4,11 +4,13 @@
     <div class="logo-item">VIDEO COURSE</div>
   </div>
   <div class="header-actions">
-    <button (click)="toAuth()">
-      <img src="../../../../assets/ic-user.svg" alt="user logo" /> User login
+    <button (click)="redirectToLogin()">
+      <mat-icon>perm_identity</mat-icon>
+      User login
     </button>
-    <button>
-      <img src="../../../../assets/ic-exit.svg" alt="exit logo" /> Log off
+    <button *appIfAuthenticated="this.authService.isLoggedIn">
+      <mat-icon>exit_to_app</mat-icon>
+      Log off
     </button>
   </div>
 </header>

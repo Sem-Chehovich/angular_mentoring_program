@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Course } from '../../models/courses.model';
-import { MatDialog } from '@angular/material/dialog';
-import { ModalWindowComponent } from '../modal-window/modal-window.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalWindowComponent } from '../../../core/components/modal-window/modal-window.component';
 import { CoursesService } from '../../services/courses.service';
 
 
@@ -26,17 +26,25 @@ export class CourseCardComponent implements OnInit {
   }
 
   onCourseDelete() {
-    const dialogRef = this.dialog.open(ModalWindowComponent);
     this.coursesService.course = this.course
-    // this.deleteCourse.emit(this.course?.id);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+        id: 1,
+        title: 'Delete course?',
+        contentItem: 'Are you sure you want to delete',
+        content: `Video Course ${this.course?.title} ?`
+    };
+
+    const dialogRef = this.dialog.open(ModalWindowComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+        data => {
+          if (data) {
+            this.coursesService.removeCourse(this.coursesService.course)
+          }
+        }
+    );   
   }
-
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
-
 }

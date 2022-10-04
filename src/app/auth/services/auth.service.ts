@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  private isLoggedIn: boolean = false; 
+  public isLoggedIn: boolean = false; 
   private authKey: string = 'Video_course_token';
 
   login(key: string, value: string): void {

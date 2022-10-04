@@ -23,11 +23,10 @@ export class LogInComponent implements OnInit {
     console.log('Logged in successfully!')
   }
 
-    private buildForm(): void {
-      this.form = new FormGroup({
-        email: new FormControl('', [Validators.required]),
-        password: new FormControl('', [Validators.required]),
-      });
+  private buildForm(): void {
+    this.form = new FormGroup({
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
   }
-
 }

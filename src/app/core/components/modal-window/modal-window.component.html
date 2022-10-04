@@ -1,16 +1,16 @@
-<h2 mat-dialog-title>Delete course? <mat-icon mat-dialog-close>close</mat-icon></h2>
+<h2 mat-dialog-title>{{description.title}}<mat-icon mat-dialog-close>close</mat-icon></h2>
 <mat-dialog-content class="mat-typography">
-  <h3>Are you sure you want to delete</h3>
-  <h3>Video Course {{course?.id}}?</h3>
+  <h3>{{description?.contentItem}}</h3>
+  <h3>{{description?.content}}</h3>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button class="btn btn-cancel" mat-dialog-close (click)="cancel.emit()">
     Cancel
   </button>
   <button
-    class="btn btn-delit"
+    class="btn btn-delete"
     [mat-dialog-close]="true"
-    (click)="delete()"
+    (click)="deleteCourse()"
   >
     Yes, delete
   </button>
