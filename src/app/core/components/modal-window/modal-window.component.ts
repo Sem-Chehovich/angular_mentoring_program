@@ -15,14 +15,16 @@ export class ModalWindowComponent implements OnInit {
     private dialogRef: MatDialogRef<ModalWindowComponent>,
     @Inject(MAT_DIALOG_DATA) data: any) {
     this.description = data;
-}
+  }
+
   ngOnInit(): void {
   }
+
   close() {
     this.dialogRef.close();
-}
+  }
 
-  deleteCourse () {
+  confirm () {
     this.dialogRef.close(true);
   }
 }

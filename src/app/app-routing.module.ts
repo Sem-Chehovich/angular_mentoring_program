@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./auth/auth.module').then(m => m.AuthModule),
   },
-  { path: '', redirectTo: 'courses', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
 ];
 
 @NgModule({

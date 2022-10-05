@@ -5,24 +5,21 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  public isLoggedIn: boolean = false; 
-  private authKey: string = 'Video_course_token';
+  private readonly authKey: string = 'Video_course_token';
 
-  login(key: string, value: string): void {
-    window.localStorage.setItem(key, value);
-    this.isLoggedIn = true;
+  login(user: string, password: string): void {
+    localStorage.setItem(this.authKey , JSON.stringify({ user, password }));
   }
 
-  logout(key: string = this.authKey): void {
-    window.localStorage.removeItem(key);
-    this.isLoggedIn = false;
+  logout(): void {
+    window.localStorage.removeItem(this.authKey);
   }
 
   isAuthenticated(): boolean {
-    return this.isLoggedIn;
+    return localStorage.getItem(this.authKey)? true : false;
   }
 
-  getUserInfo(key: string = this.authKey): string | null {
+  getUserInfo(key: string): string | null {
     return localStorage.getItem(key);
   }
 }

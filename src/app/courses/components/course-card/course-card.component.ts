@@ -31,20 +31,22 @@ export class CourseCardComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
-        id: 1,
-        title: 'Delete course?',
-        contentItem: 'Are you sure you want to delete',
-        content: `Video Course ${this.course?.title} ?`
+      id: 1,
+      title: 'Delete course?',
+      contentItem: 'Are you sure you want to delete',
+      content: `Video Course ${this.course?.title} ?`,
+      buttonClose: 'Cancel',
+      buttonConfirm: 'Yes, delete',
     };
 
     const dialogRef = this.dialog.open(ModalWindowComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
-        data => {
-          if (data) {
-            this.coursesService.removeCourse(this.coursesService.course)
-          }
+      data => {
+        if (data) {
+          this.coursesService.removeCourse(this.coursesService.course)
         }
+      }
     );   
   }
 }

@@ -8,5 +8,11 @@ import { AuthService } from './auth/services/auth.service';
 })
 export class AppComponent {
   title = 'angular_mentoring_program';
-  constructor( public authService: AuthService) {}
+  
+  constructor( private authService: AuthService) {
+  }
+
+  get isLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
+  }
 }
