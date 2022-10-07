@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>
+  {{ description.title }}<mat-icon mat-dialog-close>close</mat-icon>
+</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>{{ description?.contentItem }}</h3>
+  <h3>{{ description?.content }}</h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn btn-close" (click)="close()">
+    {{description.buttonClose}}
+  </button>
+  <button class="btn btn-confirm" (click)="confirm()">
+    {{description.buttonConfirm}}
+  </button>
+</mat-dialog-actions>

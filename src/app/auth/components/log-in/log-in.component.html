@@ -1,1 +1,31 @@
-<p>log-in works!</p>
+<div class="login-block">
+  <form class="login__form" [formGroup]="form" (submit)="onSubmit()">
+    <h3>Login</h3>
+    <div class="login__input-wrapper">
+      <label class="login__input">
+        <span>login</span>
+      </label>
+      <input
+        formControlName="email"
+        class="login__input"
+        name="login"
+        type="login"
+      />
+    </div>
+    <div class="login__password-wrapper">
+      <label for="login__password">
+        <span>password</span>
+      </label>
+      <input
+        formControlName="password"
+        class="login__password"
+        type="password"
+      />
+      <div class="login__btn-wrapper">
+        <a class="forgot-pass-link">Forgot password?</a>
+        <button class="login__btn" type="submit">login</button>
+      </div>
+    </div>
+  </form>
+</div>
+

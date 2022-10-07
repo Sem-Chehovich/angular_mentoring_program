@@ -4,11 +4,13 @@
     <div class="logo-item">VIDEO COURSE</div>
   </div>
   <div class="header-actions">
-    <button>
-      <img src="../../../../assets/ic-user.svg" alt="user logo" /> User Info
+    <button *appIfAuthenticated="isLoggedIn" (click)="redirectToLogin()">
+      <mat-icon>perm_identity</mat-icon>
+      User login
     </button>
-    <button>
-      <img src="../../../../assets/ic-exit.svg" alt="exit logo" /> Log off
+    <button (click)="LogOut()" *appIfAuthenticated="isLoggedIn">
+      <mat-icon>exit_to_app</mat-icon>
+      Log off
     </button>
   </div>
 </header>

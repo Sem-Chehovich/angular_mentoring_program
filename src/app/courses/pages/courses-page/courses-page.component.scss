@@ -1,14 +1,12 @@
 .courses-container {
-  padding-top: 21px;
   background-color: #f5f6fa;
-  padding-bottom: 140px;
+  padding: 21px 85px 140px 85px;
 }
 
 .add-course {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
-  margin-right: 85px;
 
   .btn {
     padding-right: 12px;
@@ -37,12 +35,11 @@
   align-items: center;
   justify-content: center;
   height: 48px;
-  margin: 0 89px;
   border-radius: 6px;
   background-color: #ffffff;
   font-size: 12px;
   line-height: 1.5;
-  width: 88.5%;
+  width: 100%;
   border: 0;
   cursor: pointer;
 }
