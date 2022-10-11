@@ -8,7 +8,7 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { ModalWindowComponent } from '../core/components/modal-window/modal-window.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { MatCardModule } from '@angular/material/card';
@@ -31,7 +31,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     SharedModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     FilterPipe,

@@ -1,1 +1,66 @@
-<p>new-cours-page works!</p>
+<div class="form-wrapper">
+    <form class="new-course__form" [formGroup]="formNewCourse" (submit)="onSubmit()">
+        <h3>New course</h3>
+        <div class="new-course__input-wrapper">
+          <label for="new-course__input">
+            <span>Title:</span>
+          </label>
+          <input
+            formControlName="title"
+            class="new-course__input"
+            name="title"
+            type="text"
+            placeholder="Text input"
+          />
+        </div>
+        <div class="new-course__input-wrapper">
+          <label for="new-course__input">
+            <span>Discription:</span>
+          </label>
+          <textarea
+            cols="30"
+            rows="5"
+            class="textarea"
+            placeholder="Add description"
+            name="description"
+            required
+          ></textarea>
+        </div>
+        <div class="new-course__input-wrapper">
+          <label for="new-course__input">
+            <span>Duration:</span>
+          </label>
+          <input
+          placeholder="minutes"
+            formControlName="duration"
+            class="new-course__input duration"
+            type="text"
+          />
+        </div>
+        <div class="new-course__input-wrapper">
+          <label for="new-course__input">
+            <span>Date:</span>
+          </label>
+          <input
+            formControlName="date"
+            class="new-course__input duration"
+            type="date"
+          />
+        </div>
+        <div class="new-course__input-wrapper">
+          <label for="new-course__input">
+            <span>Authors:</span>
+          </label>
+          <input
+          placeholder="Start typing"
+            formControlName="authors"
+            class="new-course__input authors"
+            type="text"
+          />
+        </div>
+        <div class="new-course__btn-wrapper">
+          <button (click)="cancel()" class="new-course__btn reset" type="reset">Cancel</button>
+          <button (click)="createCourse()" class="new-course__btn submit" type="submit">Save</button>
+        </div>
+      </form>
+</div>

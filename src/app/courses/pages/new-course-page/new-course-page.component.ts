@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-course-page',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCoursPageComponent implements OnInit {
 
-  constructor() { }
+  formNewCourse!: FormGroup;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+
+  }
+
+  createCourse(): void {
+    this.router.navigate(['/courses/list']);
+  }
+
+  cancel(): void {
+    this.router.navigate(['/courses/list']);
   }
 
 }

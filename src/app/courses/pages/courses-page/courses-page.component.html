@@ -1,7 +1,7 @@
 <div class="courses-container">
   <app-search-course (searchTerm)="onSearchCourse($event)"></app-search-course>
   <div class="add-course">
-    <button class="btn">
+    <button (click)="addCourse()" class="btn">
       <mat-icon>add_circle_outline</mat-icon> Add Course
     </button>
   </div>

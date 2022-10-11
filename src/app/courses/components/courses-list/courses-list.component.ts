@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges, } from '@angular/core';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { Course } from '../../models/courses.model';
 import { CoursesService } from '../../services/courses.service';
@@ -8,6 +8,7 @@ import { CoursesService } from '../../services/courses.service';
   selector: 'app-courses-list',
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursesListComponent implements OnInit, OnChanges {
   @Input() query: string;

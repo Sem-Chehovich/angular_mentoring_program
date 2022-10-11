@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Course } from '../../models/courses.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalWindowComponent } from '../../../core/components/modal-window/modal-window.component';
@@ -9,6 +9,7 @@ import { CoursesService } from '../../services/courses.service';
   selector: 'app-course-card',
   templateUrl: './course-card.component.html',
   styleUrls: ['./course-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseCardComponent implements OnInit {
   @Input() course?: Course;
