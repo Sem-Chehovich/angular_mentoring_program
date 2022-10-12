@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,6 +14,7 @@ export class NewCoursPageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.buildForm();
   }
 
   onSubmit(): void {
@@ -21,11 +22,20 @@ export class NewCoursPageComponent implements OnInit {
   }
 
   createCourse(): void {
-    this.router.navigate(['/courses/list']);
+    this.router.navigate(['/courses']);
   }
 
   cancel(): void {
-    this.router.navigate(['/courses/list']);
+    this.router.navigate(['/courses']);
+  }
+
+  
+  private buildForm(): void {
+    this.formNewCourse = new FormGroup({
+      title: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+      duration: new FormControl('', [Validators.required]),
+    });
   }
 
 }

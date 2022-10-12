@@ -5,7 +5,7 @@ import { NewCoursPageComponent } from './pages/new-course-page/new-course-page.c
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: CoursesPageComponent,
   },
   {

@@ -21,7 +21,7 @@ export class LogInComponent implements OnInit {
   onSubmit(): void {
     this.auth.login(this.form.value.email, this.form.value.password)
     console.log('Logged in successfully!')
-    this.router.navigate(['/courses/list']);
+    this.router.navigate(['/courses']);
   }
 
   private buildForm(): void {
