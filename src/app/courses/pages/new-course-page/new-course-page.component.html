@@ -1,4 +1,4 @@
-<div class="new-course">
+<mat-card class="new-course">
   <form
     class="new-course__form"
     [formGroup]="formNewCourse"
@@ -6,8 +6,8 @@
   >
     <h3 class="new-course__title">New course</h3>
     <div class="new-course__input-wrapper">
-      <label for="new-course__input">
-        <span class="new-course__input-span">Title:</span>
+      <label class="new-course__label" for="text-input">
+        <span class="new-course__label-text">Title:</span>
       </label>
       <input
         formControlName="title"
@@ -15,11 +15,12 @@
         name="title"
         type="text"
         placeholder="Text input"
+        id="text-input"
       />
     </div>
     <div class="new-course__input-wrapper">
-      <label for="new-course__input">
-        <span class="new-course__input-span">Description:</span>
+      <label class="new-course__label" for="text-area">
+        <span class="new-course__label-text">Description:</span>
       </label>
       <textarea
         cols="30"
@@ -29,26 +30,27 @@
         name="description"
         required
         formControlName="description"
+        id="text-area"
       ></textarea>
     </div>
-    <app-new-corse-duration></app-new-corse-duration>
-    <app-new-corse-date></app-new-corse-date>
-    <app-new-corse-authors></app-new-corse-authors>
+    <app-duration-input></app-duration-input>
+    <app-date-input></app-date-input>
+    <app-authors-input></app-authors-input>
     <div class="new-course__btn-wrapper">
       <button
         (click)="cancel()"
-        class="new-course__btn new-course__btn-reset"
+        class="new-course__btn new-course__btn--reset"
         type="reset"
       >
         Cancel
       </button>
       <button
         (click)="createCourse()"
-        class="new-course__btn new-course__btn-submit"
+        class="new-course__btn new-course__btn--submit"
         type="submit"
       >
         Save
       </button>
     </div>
   </form>
-</div>
+</mat-card>

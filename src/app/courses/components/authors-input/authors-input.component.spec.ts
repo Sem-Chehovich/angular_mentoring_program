@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewCorseAuthorsComponent } from './new-corse-authors.component';
+import { AuthorsInputComponent } from './authors-input.component';
 
 describe('NewCorseAuthorsComponent', () => {
-  let component: NewCorseAuthorsComponent;
-  let fixture: ComponentFixture<NewCorseAuthorsComponent>;
+  let component: AuthorsInputComponent;
+  let fixture: ComponentFixture<AuthorsInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewCorseAuthorsComponent ]
+      declarations: [ AuthorsInputComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NewCorseAuthorsComponent);
+    fixture = TestBed.createComponent(AuthorsInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

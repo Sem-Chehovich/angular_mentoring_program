@@ -14,9 +14,9 @@ import { CoursesListComponent } from './components/courses-list/courses-list.com
 import { MatCardModule } from '@angular/material/card';
 import { FilterPipe } from '../shared/pipes/filter.pipe';
 import { MatDialogModule } from '@angular/material/dialog';
-import { NewCorseDateComponent } from './components/new-corse-date/new-corse-date.component';
-import { NewCorseDurationComponent } from './components/new-corse-duration/new-corse-duration.component';
-import { NewCorseAuthorsComponent } from './components/new-corse-authors/new-corse-authors.component';
+import { DurationInputComponent } from './components/duration-input/duration-input.component';
+import { AuthorsInputComponent } from './components/authors-input/authors-input.component';
+import { DateInputComponent } from './components/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,9 @@ import { NewCorseAuthorsComponent } from './components/new-corse-authors/new-cor
     ModalWindowComponent,
     SearchCourseComponent,
     CoursesListComponent,
-    NewCorseDateComponent,
-    NewCorseDurationComponent,
-    NewCorseAuthorsComponent,
+    DurationInputComponent,
+    AuthorsInputComponent,
+    DateInputComponent,
   ],
   imports: [
     CommonModule,

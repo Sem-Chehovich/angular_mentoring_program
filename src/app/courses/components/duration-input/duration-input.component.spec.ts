@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewCorseDurationComponent } from './new-corse-duration.component';
+import { DurationInputComponent } from './duration-input.component';
 
 describe('NewCorseDurationComponent', () => {
-  let component: NewCorseDurationComponent;
-  let fixture: ComponentFixture<NewCorseDurationComponent>;
+  let component: DurationInputComponent;
+  let fixture: ComponentFixture<DurationInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewCorseDurationComponent ]
+      declarations: [ DurationInputComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NewCorseDurationComponent);
+    fixture = TestBed.createComponent(DurationInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
