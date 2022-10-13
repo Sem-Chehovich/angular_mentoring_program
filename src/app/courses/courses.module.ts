@@ -8,12 +8,15 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { ModalWindowComponent } from '../core/components/modal-window/modal-window.component';
 import { SearchCourseComponent } from './components/search-course/search-course.component';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { FilterPipe } from '../shared/pipes/filter.pipe';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DurationInputComponent } from './components/duration-input/duration-input.component';
+import { AuthorsInputComponent } from './components/authors-input/authors-input.component';
+import { DateInputComponent } from './components/date-input/date-input.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     ModalWindowComponent,
     SearchCourseComponent,
     CoursesListComponent,
+    DurationInputComponent,
+    AuthorsInputComponent,
+    DateInputComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +37,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     SharedModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     FilterPipe,

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges, } from '@angular/core';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { Course } from '../../models/courses.model';
 import { CoursesService } from '../../services/courses.service';

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Course } from '../../models/courses.model';
 
 @Component({
@@ -10,7 +11,7 @@ export class CoursesPageComponent implements OnInit {
   courses: Course[];
   query: string = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,11 @@ export class CoursesPageComponent implements OnInit {
     console.log('Button clicked view more');
   }
 
-  onSearchCourse(query: string) {
+  onSearchCourse(query: string): void {
     this.query = query;
+  }
+
+  addCourse(): void {
+    this.router.navigate(['/courses/new']);
   }
 }

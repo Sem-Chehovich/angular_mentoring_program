@@ -4,19 +4,18 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core'
   selector: '[appIfAuthenticated]'
 })
 export class IfAuthenticatedDirective {
-  private hasView = false;
-
+  
+  @Input('appIfAuthenticated') public status!: boolean | null;
   constructor(
     private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef) { }
+    private viewContainerRef: ViewContainerRef
+  ) {}
 
-  @Input() set appIfAuthenticated(condition: boolean) {
-    if (condition && !this.hasView) {
-      this.viewContainer.createEmbeddedView(this.templateRef);
-      this.hasView = true;
-    } else if (condition && this.hasView) {
-      this.viewContainer.clear();
-      this.hasView = false;
+ ngOnChanges(): void {
+    if (this.status) {
+      this.viewContainerRef.createEmbeddedView(this.templateRef);
+    } else {
+      this.viewContainerRef.clear();
     }
   }
 }

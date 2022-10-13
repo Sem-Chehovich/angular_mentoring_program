@@ -11,7 +11,6 @@ import { AuthService } from '../../services/auth.service';
 export class LogInComponent implements OnInit {
 
   form!: FormGroup;
-  private authKey: string = 'Video_course_token';
 
   constructor(private auth: AuthService, private router: Router,) { }
 
