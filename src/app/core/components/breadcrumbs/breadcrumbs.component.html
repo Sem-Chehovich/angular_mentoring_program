@@ -1,5 +1,13 @@
 <div class="breadcrumb-container">
-  <ul>
-    <li>Courses</li>
-  </ul>
+  <span *ngFor="let crumb of breadCrumbs; let last = last">
+    <span *ngIf="crumb.path; else elseBlock">
+      <button class="btn-home" (click)="redirect(crumb.path)">
+        {{ crumb.text }}
+      </button>
+    </span>
+    <span *ngIf="!last">/</span>
+    <ng-template #elseBlock>
+      <span>{{ crumb.text }}</span>
+    </ng-template>
+  </span>
 </div>

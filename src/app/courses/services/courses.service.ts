@@ -5,7 +5,7 @@ import { Course } from '../models/courses.model';
   providedIn: 'root'
 })
 export class CoursesService {
-
+  
   course: Course | undefined;
 
   courses: Course[] = [
@@ -48,8 +48,8 @@ export class CoursesService {
     this.courses.push(course);
   }
 
-  getCourse(id: number): Course | undefined {
-    return this.courses.find(course => course.id === id);
+  getCourse(id: number): Course {
+    return this.courses.find(course => course.id === id) as Course;
   }
 
   updateCourse(course: Course): Course[] {
