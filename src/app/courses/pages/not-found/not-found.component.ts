@@ -10,7 +10,7 @@ export class NotFoundComponent {
 
   constructor(private router: Router) {}
 
-  public goHome(): void {
+  public redirectToHomePage(): void {
     this.router.navigateByUrl('/courses');
   }
 

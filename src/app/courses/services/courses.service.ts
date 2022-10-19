@@ -49,7 +49,7 @@ export class CoursesService {
   }
 
   getCourse(id: number): Course {
-    return this.courses.find(course => course.id === id) as Course;
+    return this.courses.find(course => course.id === id)!;
   }
 
   updateCourse(course: Course): Course[] {

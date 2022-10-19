@@ -1,10 +1,6 @@
 <mat-card class="new-course">
-  <form
-    class="new-course__form"
-    [formGroup]="formNewCourse"
-    (submit)="onSubmit()"
-  >
-    <h3 class="new-course__title">New course</h3>
+  <form class="new-course__form" [formGroup]="formNewCourse">
+    <h3 class="new-course__title">{{ title }}</h3>
     <div class="new-course__input-wrapper">
       <label class="new-course__label" for="text-input">
         <span class="new-course__label-text">Title:</span>
@@ -45,7 +41,7 @@
         Cancel
       </button>
       <button
-        (click)="createCourse()"
+        (click)="onFormSubmit()"
         class="new-course__btn new-course__btn--submit"
         type="submit"
       >

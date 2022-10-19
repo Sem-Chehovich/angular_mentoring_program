@@ -3,7 +3,10 @@ import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CoursesService } from 'src/app/courses/services/courses.service';
 
-type breadCrumbsType = { text: string, path?: string }[];
+interface BreadCrumbs {
+  text: string, 
+  path?: string,
+}
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -12,7 +15,7 @@ type breadCrumbsType = { text: string, path?: string }[];
 })
 export class BreadcrumbsComponent implements OnInit {
 
-  breadCrumbs: breadCrumbsType;
+  breadCrumbs: BreadCrumbs[];
 
   public sub: Subscription;
 
@@ -36,7 +39,7 @@ export class BreadcrumbsComponent implements OnInit {
     }
   }
 
-  routeBreadCrumbsFactory(url: string = ''): () => breadCrumbsType {
+  routeBreadCrumbsFactory(url: string = ''): () => BreadCrumbs[] {
     const urlArr = url[0] === '/' ? url.split('/').slice(1) : url.split('/');
     switch (urlArr[0]) {
       case 'courses':
@@ -46,7 +49,7 @@ export class BreadcrumbsComponent implements OnInit {
     }
   }
 
-  getCoursesBreadCrumbs(urlArr: string[]): breadCrumbsType {
+  getCoursesBreadCrumbs(urlArr: string[]): BreadCrumbs[] {
     if (urlArr.length === 1) {
       return [{ text: 'Courses' }];
     }

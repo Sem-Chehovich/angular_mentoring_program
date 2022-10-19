@@ -1,15 +1,31 @@
-.breadcrumb-container {
+.breadcrumb {
+  display: flex;
   height: 44px;
   background-color: #fff;
   padding-top: 20px;
   padding-left: 85px;
-}
+  margin-top: 0;
+  margin-bottom: 0;
 
-.btn-home {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
+  &__element {
+    list-style-type: none;
+  }
+
+  &__button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__separator {
+    color: #30b6dd;
+    margin: 0 3px;
+  }
+
+  &__text {
+    font-weight: 600;
+  }
 }
