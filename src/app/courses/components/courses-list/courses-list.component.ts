@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges, } from '@angular/core';
+import { Router } from '@angular/router';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 import { Course } from '../../models/courses.model';
 import { CoursesService } from '../../services/courses.service';
-
 
 @Component({
   selector: 'app-courses-list',
@@ -15,7 +15,7 @@ export class CoursesListComponent implements OnInit, OnChanges {
   searchedCourses: Course[];
   isDataEmpty: boolean
 
-  constructor(private filterPipe: FilterPipe, private coursesService: CoursesService) {}
+  constructor(private filterPipe: FilterPipe, private coursesService: CoursesService, private router: Router,) {}
 
   ngOnChanges(changes: SimpleChanges) {
     const { currentValue, previousValue, firstChange } = changes['query'];
@@ -36,13 +36,12 @@ export class CoursesListComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-
   trackByFn(index: number, course: Course) {
     return index;
   }
 
   onEditCourse(courseId: number) {
-    console.log(`Edit Course with Id: ${courseId}`);
+    this.router.navigateByUrl(`courses/${courseId}`);
 
   }
 

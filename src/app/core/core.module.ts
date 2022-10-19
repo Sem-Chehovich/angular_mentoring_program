@@ -20,7 +20,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     MatIconModule,
-    SharedModule
+    SharedModule,
   ],
 })
 export class CoreModule { }

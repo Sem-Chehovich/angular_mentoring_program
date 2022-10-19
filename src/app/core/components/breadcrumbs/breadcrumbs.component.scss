@@ -1,16 +1,31 @@
-.breadcrumb-container {
-  width: 100%;
-  height: 64px;
+.breadcrumb {
+  display: flex;
+  height: 44px;
   background-color: #fff;
+  padding-top: 20px;
+  padding-left: 85px;
+  margin-top: 0;
+  margin-bottom: 0;
 
-  ul {
-    margin: 0;
+  &__element {
+    list-style-type: none;
   }
 
-  li {
-    padding-top: 20px;
-    padding-left: 45px;
-    list-style-type: none;
-    font-weight: 700;
+  &__button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__separator {
+    color: #30b6dd;
+    margin: 0 3px;
+  }
+
+  &__text {
+    font-weight: 600;
   }
 }

@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DurationInputComponent } from './components/duration-input/duration-input.component';
 import { AuthorsInputComponent } from './components/authors-input/authors-input.component';
 import { DateInputComponent } from './components/date-input/date-input.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DateInputComponent } from './components/date-input/date-input.component
     DurationInputComponent,
     AuthorsInputComponent,
     DateInputComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,

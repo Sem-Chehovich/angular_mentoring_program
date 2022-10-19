@@ -1,5 +1,18 @@
-<div class="breadcrumb-container">
-  <ul>
-    <li>Courses</li>
-  </ul>
-</div>
+<ul class="breadcrumb">
+  <li
+    class="breadcrumb__element"
+    *ngFor="let crumb of breadCrumbs; let last = last"
+  >
+    <button
+      *ngIf="crumb.path; else elseBlock"
+      class="breadcrumb__button"
+      (click)="redirect(crumb.path)"
+    >
+      {{ crumb.text }}
+    </button>
+    <span class="breadcrumb__separator" *ngIf="!last">/</span>
+    <ng-template #elseBlock>
+      <span class="breadcrumb__text">{{ crumb.text }}</span>
+    </ng-template>
+  </li>
+</ul>

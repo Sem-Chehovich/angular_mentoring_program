@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'new',
     component: NewCoursPageComponent,
   },
+  { 
+    path: ':id', 
+    component: NewCoursPageComponent 
+  }
 ];
 
 @NgModule({
